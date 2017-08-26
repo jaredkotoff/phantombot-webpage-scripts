@@ -2,8 +2,7 @@
     // Commands
 		$name = "commands";
     curl_setopt($curl, CURLOPT_URL, "${protocol}://${url}/dbquery?table=command&getSortedRows&order=ASC");
-    $results = json_decode(curl_exec($curl));
-    $results = json_encode($results);
+    $results = curl_exec($curl);
 
     // write to a file
     $fp = fopen("${outputFolder}${name}.json", 'w');

@@ -18,12 +18,12 @@
 	</tr>
 	<?php
         $rank = 1;
-				$blacklist = [];
+				$blacklist = []; // string array of names you don't want ranked publicly
         foreach ($times as $time) {
             if ($rank > 100) {
                 break;
             }
-						if(in_array($user, $blacklist)) {
+						if(in_array($time, $blacklist)) {
 							continue;
 						}
 						$convertedTime = secondsToTime($time->value);
